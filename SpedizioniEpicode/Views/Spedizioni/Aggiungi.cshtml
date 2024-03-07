@@ -1,0 +1,71 @@
+﻿@model SpedizioniEpicode.Models.Spedizione
+
+@{
+    ViewBag.Title = "Aggiungi Spedizione";
+}
+
+<h2>Aggiungi Spedizione</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumeroIdentificativo)
+        @Html.TextBoxFor(m => m.NumeroIdentificativo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumeroIdentificativo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DataSpedizione)
+        @Html.TextBoxFor(m => m.DataSpedizione, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.DataSpedizione, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Peso)
+        @Html.TextBoxFor(m => m.Peso, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Peso, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CittàDestinataria)
+        @Html.TextBoxFor(m => m.CittàDestinataria, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CittàDestinataria, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IndirizzoDestinatario)
+        @Html.TextBoxFor(m => m.IndirizzoDestinatario, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.IndirizzoDestinatario, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NominativoDestinatario)
+        @Html.TextBoxFor(m => m.NominativoDestinatario, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NominativoDestinatario, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Costo)
+        @Html.TextBoxFor(m => m.Costo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Costo, "", new { @class = "text-danger" })
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DataConsegnaPrevista)
+        @Html.TextBoxFor(m => m.DataConsegnaPrevista, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.DataConsegnaPrevista, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ClienteId)
+        @Html.DropDownListFor(m => m.ClienteId, Model.ClientiList, "-- Seleziona cliente --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ClienteId, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Aggiungi Spedizione</button>
+}
+

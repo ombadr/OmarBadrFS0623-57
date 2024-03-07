@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SpedizioniEpicode.Models.AggiornamentoSpedizione> 
+@{
+    ViewBag.Title = "Aggiornamento Spedizioni";
+}
+
+<h2>Aggiornamento Spedizioni</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+     
+            <th>Stato</th>
+            <th>Luogo</th>
+            <th>Descrizione</th>
+            <th>Data Aggiornamento</th>
+         
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var aggiornamento in Model)
+            {
+                <tr>
+             
+                    <td>@aggiornamento.Stato</td>
+                    <td>@aggiornamento.Luogo</td>
+                    <td>@aggiornamento.Descrizione</td>
+                    <td>@aggiornamento.DataOraAggiornamento.ToString("dd/MM/yyyy HH:mm")</td>
+                    
+                </tr>
+            }
+    </tbody>
+</table>

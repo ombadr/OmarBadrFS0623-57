@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SpedizioniEpicode.Models.Cliente>
+@{
+    ViewBag.Title = "Elenco Clienti";
+}
+
+<h2>Elenco Clienti</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Codice Fiscale</th>
+            <th>Partita IVA</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var cliente in Model)
+            {
+        <tr>
+            <th>@cliente.Nome</th>
+            <th>@cliente.CodiceFiscale</th>
+            <th>@cliente.PartitaIVA</th>
+        </tr>
+            }
+    </tbody>
+</table>
+
