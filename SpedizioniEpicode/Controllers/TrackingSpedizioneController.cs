@@ -39,7 +39,7 @@ namespace SpedizioniEpicode.Controllers
                     SELECT a.* FROM AggiornamentoSpedizioni AS a
                     JOIN Spedizioni AS s ON a.SpedizioneId = s.SpedizioneId
                     JOIN Clienti AS c ON s.ClienteId = c.ClienteId
-                    WHERE (c.CodiceFiscale = @CodiceFiscale) OR c.PartitaIVA = @PartitaIVA
+                    WHERE ((c.CodiceFiscale = @CodiceFiscale) OR c.PartitaIVA = @PartitaIVA)
                     AND s.NumeroIdentificativo = @NumeroIdentificativo
                     ORDER BY a.DataOraAggiornamento DESC
                     ";
